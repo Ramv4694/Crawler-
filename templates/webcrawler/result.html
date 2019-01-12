@@ -1,0 +1,196 @@
+<html>
+
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  </head>
+
+
+<body>
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Web Crawler</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/"> Home </a></li>
+
+
+        </ul>
+
+      </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+
+
+        <h1>
+          <strong> The given Webpage is  {{user_url}}  </strong>
+
+          <br> </br>
+
+          <strong>  I had limited time to pretty print the output </strong>
+
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+          <a href="{% url 'webcrawler:webcrawler_images' %}" class="tile purple">
+            <h3 class="title">Images</h3>
+            <p>Get all images here</p>
+          </a>
+      </div>
+      <div class="col-sm-4">
+          <a href="{% url 'webcrawler:webcrawler_links' %}" class="tile orange">
+            <h3 class="title">Links</h3>
+            <p>Get All links here.</p>
+          </a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<h1>
+<strong > Printing Raw output for reference , however i can use this data to do analysis and push it to db </strong>
+</h1>
+<p> {{plain_text}} </p>
+
+
+<p> The images are </P>
+
+
+<p> {{img_tags}} </p>
+
+
+<p> The links are </p>
+
+<p> {{link_tags}} </p>
+
+
+
+
+
+</body>
+
+
+</html>
+<style>
+
+  @import "bourbon";
+
+$color_purple: #5133AB;
+$color_red: #AC193D;
+$color_orange: #DC572E;
+$color_green: #00A600;
+$color_blue: #2672EC;
+
+$base_font_size: 14px;
+$base_line_height: 1.5em;
+$text_font_family: 'Open Sans', "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+$display_font_family: 'Open Sans', "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+
+body {
+	font-family: $text_font_family;
+	font-size: $base_font_size;
+	line-height: $base_line_height;
+	font-weight: 400;
+}
+
+p, span, a, ul, li, button {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+}
+
+strong {
+	font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $display_font_family;
+	line-height: $base_line_height;
+	font-weight: 300;
+}
+
+strong {
+  font-weight: 400;
+}
+
+.tile {
+  width: 100%;
+	display: inline-block;
+	box-sizing: border-box;
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 10px;
+
+  .title {
+		margin-top: 0px;
+	}
+
+  &.purple, &.blue, &.red, &.orange, &.green {
+    color: #fff;
+  }
+
+  &.purple {
+    background: $color_purple;
+
+		&:hover {
+			background: darken($color_purple, 10%);
+		}
+  }
+
+  &.red {
+    background: $color_red;
+
+		&:hover {
+			background: darken($color_red, 10%);
+		}
+  }
+
+  &.green {
+    background: $color_green;
+
+		&:hover {
+			background: darken($color_green, 10%);
+		}
+  }
+
+  &.blue {
+    background: $color_blue;
+
+		&:hover {
+			background: darken($color_blue, 10%);
+		}
+  }
+
+  &.orange {
+    background: $color_orange;
+
+		&:hover {
+			background: darken($color_orange, 10%);
+		}
+  }
+}
+
+</style>
